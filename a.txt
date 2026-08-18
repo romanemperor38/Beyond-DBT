@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beyond DBT | Nuclear Security Beyond the Baseline</title>
+
+<meta name="description" content="Beyond DBT is an independent initiative advancing nuclear security in an evolving threat environment.">
+
+<style>
+:root {
+    --navy: #07131f;
+    --navy2: #0c1d2b;
+    --blue: #1d6f91;
+    --cyan: #5ec8d8;
+    --white: #f7f8f6;
+    --cream: #eef1ee;
+    --gray: #9caab2;
+    --darkgray: #53616a;
+    --line: rgba(255,255,255,.12);
+    --max: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(90%, var(--max));
+    margin: auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(7,19,31,.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+.nav {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #dce4e8;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+.nav-button {
+    border: 1px solid var(--cyan);
+    padding: 9px 16px;
+    color: white;
+}
+
+.nav-button:hover {
+    background: var(--cyan);
+    color: var(--navy);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(90deg, rgba(7,19,31,.96) 0%, rgba(7,19,31,.82) 48%, rgba(7,19,31,.45) 100%),
+        url("https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(94,200,216,.35);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 40px rgba(94,200,216,.04),
+        0 0 0 80px rgba(94,200,216,.03);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding-top: 80px;
+}
+
+.kicker {
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: .98;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+    max-width: 850px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #d2dce0;
+    max-width: 700px;
+    margin-bottom: 38px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    border: 1px solid var(--cyan);
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--cyan);
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background: white;
+    border-color: white;
+}
+
+.btn-secondary {
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--navy);
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    background: var(--cream);
+    padding: 110px 0;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+}
+
+.section-label {
+    font-size: 12px;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.intro h2 {
+    font-size: 45px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.intro-text {
+    font-size: 23px;
+    line-height: 1.5;
+    color: #35434b;
+}
+
+.intro-text strong {
+    color: var(--navy);
+}
+
+/* =========================
+   BEYOND DBT CONCEPT
+========================= */
+
+.concept {
+    background: var(--navy);
+    color: white;
+    padding: 120px 0;
+}
+
+.concept-header {
+    max-width: 760px;
+    margin-bottom: 70px;
+}
+
+.concept h2 {
+    font-size: 55px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.concept h2 span {
+    color: var(--cyan);
+}
+
+.threat-map {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+}
+
+.threat-box {
+    min-height: 190px;
+    border: 1px solid var(--line);
+    padding: 30px;
+    position: relative;
+}
+
+.threat-box h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.threat-box p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.threat-box.highlight {
+    border-color: var(--cyan);
+    background: rgba(94,200,216,.07);
+}
+
+.threat-box.highlight h3 {
+    color: var(--cyan);
+}
+
+.threat-arrow {
+    text-align: center;
+    font-size: 30px;
+    color: var(--cyan);
+}
+
+/* =========================
+   RESEARCH
+========================= */
+
+.research {
+    padding: 120px 0;
+}
+
+.research-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 55px;
+}
+
+.research-header h2 {
+    font-size: 55px;
+    letter-spacing: -2px;
+}
+
+.research-header p {
+    max-width: 430px;
+    color: var(--darkgray);
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-top: 1px solid #d5dcde;
+}
+
+.research-card {
+    padding: 42px 30px 45px 0;
+    border-bottom: 1px solid #d5dcde;
+}
+
+.research-card:nth-child(even) {
+    padding-left: 35px;
+    border-left: 1px solid #d5dcde;
+}
+
+.number {
+    font-size: 12px;
+    color: var(--blue);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.research-card h3 {
+    font-size: 29px;
+    margin: 18px 0 12px;
+}
+
+.research-card p {
+    color: #5d6970;
+    max-width: 500px;
+}
+
+/* =========================
+   FEATURED REPORT
+========================= */
+
+.featured {
+    background: #dfe8e9;
+    padding: 100px 0;
+}
+
+.report {
+    background: var(--navy);
+    color: white;
+    padding: 70px;
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.report::before {
+    content: "DBT";
+    position: absolute;
+    right: -40px;
+    bottom: -90px;
+    font-size: 240px;
+    font-weight: 900;
+    color: rgba(255,255,255,.025);
+}
+
+.report h2 {
+    font-size: 48px;
+    line-height: 1.05;
+    margin: 15px 0 25px;
+}
+
+.report p {
+    color: #bdc9ce;
+    max-width: 600px;
+}
+
+.report-meta {
+    border-left: 1px solid var(--line);
+    padding-left: 35px;
+}
+
+.report-meta div {
+    margin-bottom: 25px;
+}
+
+.report-meta small {
+    display: block;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+.report-meta strong {
+    font-size: 16px;
+}
+
+/* =========================
+   PROGRAMS
+========================= */
+
+.programs {
+    padding: 120px 0;
+}
+
+.programs h2 {
+    font-size: 52px;
+    margin-bottom: 50px;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.program {
+    border: 1px solid #d9dfe1;
+    padding: 35px;
+    transition: .3s;
+}
+
+.program:hover {
+    transform: translateY(-6px);
+    border-color: var(--blue);
+}
+
+.program-icon {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.program h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.program p {
+    color: #667279;
+    font-size: 15px;
+}
+
+/* =========================
+   NETWORK
+========================= */
+
+.network {
+    background: var(--blue);
+    color: white;
+    padding: 100px 0;
+}
+
+.network-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.network h2 {
+    font-size: 53px;
+    line-height: 1.05;
+}
+
+.network p {
+    color: #dce9ed;
+    font-size: 18px;
+    margin: 20px 0 30px;
+}
+
+.network ul {
+    list-style: none;
+}
+
+.network li {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.network li::before {
+    content: "→";
+    margin-right: 12px;
+    color: var(--cyan);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 120px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about h2 {
+    font-size: 50px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.about p {
+    color: #5c6870;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.principle {
+    padding: 25px;
+    background: var(--cream);
+}
+
+.principle h3 {
+    margin-bottom: 8px;
+}
+
+.principle p {
+    font-size: 14px;
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter {
+    background: #edf2f2;
+    padding: 90px 0;
+}
+
+.newsletter-inner {
+    max-width: 760px;
+}
+
+.newsletter h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    color: #5c6870;
+    margin-bottom: 25px;
+}
+
+.signup {
+    display: flex;
+    max-width: 600px;
+}
+
+.signup input {
+    flex: 1;
+    border: 1px solid #b9c3c6;
+    padding: 16px;
+    font-size: 15px;
+    background: white;
+}
+
+.signup button {
+    border: none;
+    background: var(--navy);
+    color: white;
+    padding: 0 25px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.signup button:hover {
+    background: var(--blue);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: var(--navy);
+    color: white;
+    padding: 65px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--cyan);
+}
+
+footer p {
+    color: #91a0a8;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+.footer-column h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cyan);
+    margin-bottom: 20px;
+}
+
+.footer-column a {
+    display: block;
+    color: #b6c1c6;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+    color: #71818a;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .intro-grid,
+    .network-grid,
+    .about-grid,
+    .report {
+        grid-template-columns: 1fr;
+    }
+
+    .threat-map {
+        grid-template-columns: 1fr;
+    }
+
+    .threat-arrow {
+        transform: rotate(90deg);
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-card:nth-child(even) {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report {
+        padding: 40px;
+    }
+
+    .report-meta {
+        border-left: none;
+        border-top: 1px solid var(--line);
+        padding-left: 0;
+        padding-top: 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .signup {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .signup button {
+        padding: 15px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header>
+    <div class="container nav">
+
+        <a href="#" class="logo">
+            BEYOND<span>DBT</span>
+        </a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#programs">Programs</a>
+            <a href="#publications">Publications</a>
+            <a href="#network">Network</a>
+            <a href="#contact" class="nav-button">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="kicker">
+            Independent Nuclear Security Initiative
+        </div>
+
+        <h1>
+            The threat is changing.
+            <span>Nuclear security must change with it.</span>
+        </h1>
+
+        <p>
+            Beyond DBT is an independent international initiative
+            working at the intersection of nuclear security, emerging
+            technology, armed conflict and strategic risk.
+        </p>
+
+        <div class="buttons">
+            <a href="#research" class="btn btn-primary">
+                Explore our work
+            </a>
+
+            <a href="#about" class="btn btn-secondary">
+                Our mission
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro" id="about">
+
+    <div class="container intro-grid">
+
+        <div>
+            <div class="section-label">
+                Why Beyond DBT?
+            </div>
+
+            <h2>
+                Security assumptions
+                cannot remain static.
+            </h2>
+        </div>
+
+        <div class="intro-text">
+
+            <p>
+                Nuclear security systems are built around defined
+                assumptions about the threats they must address.
+                These assumptions remain essential—but the security
+                environment is evolving faster than traditional
+                frameworks.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>
+                    Beyond DBT examines what happens when the threat
+                    exceeds the baseline.
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONCEPT
+========================= -->
+
+<section class="concept">
+
+    <div class="container">
+
+        <div class="concept-header">
+
+            <div class="section-label">
+                The Beyond DBT Concept
+            </div>
+
+            <h2>
+                From the
+                <span>Design Basis Threat</span>
+                to the threat environment of tomorrow.
+            </h2>
+
+        </div>
+
+
+        <div class="threat-map">
+
+            <div class="threat-box">
+
+                <h3>Traditional Security</h3>
+
+                <p>
+                    Defined threat assumptions,
+                    known adversaries and established
+                    security scenarios.
+                </p>
+
+            </div>
+
+
+            <div class="threat-arrow">
+                →
+            </div>
+
+
+            <div class="threat-box highlight">
+
+                <h3>Beyond DBT</h3>
+
+                <p>
+                    Adaptive security designed for
+                    uncertainty, emerging technologies,
+                    hybrid threats and strategic disruption.
+                </p>
+
+            </div>
+
+
+            <div class="threat-box">
+
+                <h3>Emerging Threats</h3>
+
+                <p>
+                    Artificial intelligence, cyber operations,
+                    autonomous systems, insider threats,
+                    terrorism and armed conflict.
+                </p>
+
+            </div>
+
+
+            <div class="threat-arrow">
+                →
+            </div>
+
+
+            <div class="threat-box">
+
+                <h3>Resilient Nuclear Security</h3>
+
+                <p>
+                    Security frameworks capable of
+                    adapting before emerging threats
+                    become established vulnerabilities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RESEARCH
+========================= -->
+
+<section class="research" id="research">
+
+    <div class="container">
+
+        <div class="research-header">
+
+            <div>
+
+                <div class="section-label">
+                    Research
+                </div>
+
+                <h2>
+                    Where we work
+                </h2>
+
+            </div>
+
+            <p>
+                We focus on security challenges where technological,
+                strategic and geopolitical change intersects with
+                nuclear and radiological risks.
+            </p>
+
+        </div>
+
+
+        <div class="research-grid">
+
+            <article class="research-card">
+
+                <div class="number">01 / RESEARCH AREA</div>
+
+                <h3>
+                    Nuclear Security in Armed Conflict
+                </h3>
+
+                <p>
+                    Examining how war changes the protection,
+                    governance and resilience of nuclear facilities
+                    and materials.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="number">02 / RESEARCH AREA</div>
+
+                <h3>
+                    Artificial Intelligence & Nuclear Security
+                </h3>
+
+                <p>
+                    Assessing how AI can alter nuclear terrorism,
+                    cyber operations, physical protection,
+                    radiological security and decision-making.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="number">03 / RESEARCH AREA</div>
+
+                <h3>
+                    The Future of the Design Basis Threat
+                </h3>
+
+                <p>
+                    Rethinking threat assessment and security
+                    assumptions in an environment characterized
+                    by uncertainty and rapid technological change.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="number">04 / RESEARCH AREA</div>
+
+                <h3>
+                    Emerging Technologies
+                </h3>
+
+                <p>
+                    Exploring drones, autonomous systems, cyber
+                    capabilities and other technologies that may
+                    transform the nuclear security landscape.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="number">05 / RESEARCH AREA</div>
+
+                <h3>
+                    Nuclear & Radiological Terrorism
+                </h3>
+
+                <p>
+                    Studying evolving pathways to nuclear and
+                    radiological terrorism and developing practical
+                    approaches to prevention and resilience.
+                </p>
+
+            </article>
+
+
+            <article class="research-card">
+
+                <div class="number">06 / RESEARCH AREA</div>
+
+                <h3>
+                    International Nuclear Security Governance
+                </h3>
+
+                <p>
+                    Examining how international institutions,
+                    governments and industry can adapt nuclear
+                    security governance to emerging risks.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURED PUBLICATION
+========================= -->
+
+<section class="featured" id="publications">
+
+    <div class="container">
+
+        <div class="report">
+
+            <div>
+
+                <div class="section-label">
+                    Featured Research
+                </div>
+
+                <h2>
+                    Why the Design Basis Threat
+                    is no longer enough.
+                </h2>
+
+                <p>
+                    Nuclear security frameworks were never designed
+                    to predict every possible threat. Today,
+                    technological disruption, armed conflict and
+                    unconventional actors are testing the limits
+                    of established assumptions.
+                </p>
+
+                <br>
+
+                <a href="#" class="btn btn-primary">
+                    Read the report
+                </a>
+
+            </div>
+
+
+            <div class="report-meta">
+
+                <div>
+                    <small>Publication</small>
+                    <strong>Policy Brief</strong>
+                </div>
+
+                <div>
+                    <small>Series</small>
+                    <strong>Beyond the Baseline</strong>
+                </div>
+
+                <div>
+                    <small>Year</small>
+                    <strong>2026</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROGRAMS
+========================= -->
+
+<section class="programs" id="programs">
+
+    <div class="container">
+
+        <div class="section-label">
+            What we do
+        </div>
+
+        <h2>
+            Research is only the beginning.
+        </h2>
+
+
+        <div class="program-grid">
+
+            <div class="program">
+
+                <div class="program-icon">
+                    R
+                </div>
+
+                <h3>
+                    Research
+                </h3>
+
+                <p>
+                    Independent research, policy analysis and
+                    strategic foresight on emerging nuclear
+                    security challenges.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <div class="program-icon">
+                    P
+                </div>
+
+                <h3>
+                    Policy
+                </h3>
+
+                <p>
+                    Translating research into practical
+                    recommendations for governments,
+                    international organizations and industry.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <div class="program-icon">
+                    T
+                </div>
+
+                <h3>
+                    Training
+                </h3>
+
+                <p>
+                    Building the next generation of nuclear
+                    security professionals through workshops,
+                    simulations and expert-led programs.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <div class="program-icon">
+                    C
+                </div>
+
+                <h3>
+                    Convening
+                </h3>
+
+                <p>
+                    Creating spaces where policymakers,
+                    researchers, technical experts and emerging
+                    leaders can exchange ideas.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <div class="program-icon">
+                    F
+                </div>
+
+                <h3>
+                    Foresight
+                </h3>
+
+                <p>
+                    Identifying weak signals and emerging
+                    developments before they become established
+                    security challenges.
+                </p>
+
+            </div>
+
+
+            <div class="program">
+
+                <div class="program-icon">
+                    N
+                </div>
+
+                <h3>
+                    Network
+                </h3>
+
+                <p>
+                    Connecting a new generation of professionals
+                    working across nuclear security, nonproliferation
+                    and strategic risk.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NETWORK
+========================= -->
+
+<section class="network" id="network">
+
+    <div class="container network-grid">
+
+        <div>
+
+            <div class="section-label">
+                Beyond DBT Network
+            </div>
+
+            <h2>
+                Building the next
+                generation of
+                nuclear security leaders.
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                The future of nuclear security depends not only on
+                institutions, but on the people capable of
+                understanding emerging threats and translating
+                knowledge into action.
+            </p>
+
+            <ul>
+
+                <li>
+                    Early-career researchers
+                </li>
+
+                <li>
+                    Nuclear security professionals
+                </li>
+
+                <li>
+                    Policymakers and diplomats
+                </li>
+
+                <li>
+                    Technical experts
+                </li>
+
+                <li>
+                    Emerging technology specialists
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+    <div class="container about-grid">
+
+        <div>
+
+            <div class="section-label">
+                Our mission
+            </div>
+
+            <h2>
+                Anticipate.
+                Strengthen.
+                Connect.
+            </h2>
+
+            <p>
+                Beyond DBT is an independent initiative dedicated
+                to strengthening nuclear and radiological security
+                in an evolving threat environment.
+            </p>
+
+            <p>
+                We bring together research, policy, training and
+                community-building to address security challenges
+                that traditional frameworks may not fully capture.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <div class="principles">
+
+                <div class="principle">
+
+                    <h3>
+                        Evidence-based
+                    </h3>
+
+                    <p>
+                        Research grounded in technical,
+                        legal and policy expertise.
+                    </p>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <h3>
+                        Independent
+                    </h3>
+
+                    <p>
+                        Focused on evidence and public
+                        interest rather than institutional agendas.
+                    </p>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <h3>
+                        International
+                    </h3>
+
+                    <p>
+                        Connecting perspectives across
+                        regions and professional communities.
+                    </p>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <h3>
+                        Future-focused
+                    </h3>
+
+                    <p>
+                        Looking beyond today's threat
+                        assumptions toward tomorrow's challenges.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEWSLETTER
+========================= -->
+
+<section class="newsletter" id="contact">
+
+    <div class="container">
+
+        <div class="newsletter-inner">
+
+            <div class="section-label">
+                Stay informed
+            </div>
+
+            <h2>
+                The Beyond DBT Brief
+            </h2>
+
+            <p>
+                Occasional analysis on emerging nuclear security
+                challenges, new research and upcoming events.
+            </p>
+
+            <form class="signup">
+
+                <input
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                >
+
+                <button type="submit">
+                    Subscribe
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-logo">
+                    BEYOND<span>DBT</span>
+                </div>
+
+                <p>
+                    Advancing nuclear security beyond traditional
+                    threat assumptions.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#programs">Programs</a>
+                <a href="#publications">Publications</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="#">LinkedIn</a>
+                <a href="#">X / Twitter</a>
+                <a href="mailto:info@beyonddbt.org">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 Beyond DBT. All rights reserved.
+            </span>
+
+            <span>
+                Independent Nuclear Security Initiative
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+document.querySelector(".signup").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const email = this.querySelector("input").value;
+
+    if(email) {
+        alert(
+            "Thank you. The Beyond DBT Brief subscription form is ready to be connected to your mailing system."
+        );
+    }
+
+});
+
+</script>
+
+</body>
+</html>
